@@ -16,7 +16,7 @@ pipeline{
         }
         stage('Generate sonarqube-analysis'){
             steps{
-                withSonarQubeEnv(installationName: 'sonarqube-8', credentialsId: 'jenkins-sonar-token') {
+                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar') {
                  sh 'mvn sonar:sonar'
                 }
             }
@@ -31,12 +31,12 @@ pipeline{
                      type: 'war'
                 ]
             ], 
-            credentialsId: 'nexus-credentials', 
+            credentialsId: 'nexus2', 
             groupId: 'in.javahome', 
-            nexusUrl: '52.90.34.45:8081', 
+            nexusUrl: '54.168.199.123:8081', 
             nexusVersion: 'nexus3', 
             protocol: 'http', 
-            repository: 'spring-initial', 
+            repository: 'newrepo', 
             version: '0.0.1'
             }
         }
