@@ -1,12 +1,12 @@
 pipeline{
     agent any
     tools{
-        maven 'maven-3.9'
+        maven 'mvn'
     }
     stages{
         stage('checkout the code'){
             steps{
-                git url:'https://github.com/bcreddydevops/chinna-app.git', branch: 'main'
+                git url:'https://github.com/Rajahub10/hiring-app.git, branch: 'main'
             }
         }
         stage('build the code'){
