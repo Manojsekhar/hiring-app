@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('checkout the code'){
             steps{
-                git url:'https://github.com/Rajahub10/hiring-app.git, branch: 'main'
+               git branch: 'main', url: 'https://github.com/Rajahub10/hiring-app.git'
             }
         }
         stage('build the code'){
